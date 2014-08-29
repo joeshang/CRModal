@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D29FAAFB19B0EA6200E667D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAAFA19B0EA6200E667D4 /* Foundation.framework */; };
+		D29FAAFD19B0EA6200E667D4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAAFC19B0EA6200E667D4 /* CoreGraphics.framework */; };
+		D29FAAFF19B0EA6200E667D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAAFE19B0EA6200E667D4 /* UIKit.framework */; };
+		D29FAB0519B0EA6200E667D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D29FAB0319B0EA6200E667D4 /* InfoPlist.strings */; };
+		D29FAB0719B0EA6200E667D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB0619B0EA6200E667D4 /* main.m */; };
+		D29FAB0B19B0EA6200E667D4 /* CRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB0A19B0EA6200E667D4 /* CRAppDelegate.m */; };
+		D29FAB0E19B0EA6200E667D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D29FAB0C19B0EA6200E667D4 /* Main.storyboard */; };
+		D29FAB1119B0EA6200E667D4 /* CRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB1019B0EA6200E667D4 /* CRViewController.m */; };
+		D29FAB1319B0EA6200E667D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D29FAB1219B0EA6200E667D4 /* Images.xcassets */; };
+		D29FAB1A19B0EA6200E667D4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAB1919B0EA6200E667D4 /* XCTest.framework */; };
+		D29FAB1B19B0EA6200E667D4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAAFA19B0EA6200E667D4 /* Foundation.framework */; };
+		D29FAB1C19B0EA6200E667D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAAFE19B0EA6200E667D4 /* UIKit.framework */; };
+		D29FAB2419B0EA6200E667D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D29FAB2219B0EA6200E667D4 /* InfoPlist.strings */; };
+		D29FAB2619B0EA6200E667D4 /* CRModalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB2519B0EA6200E667D4 /* CRModalTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D29FAB1D19B0EA6200E667D4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D29FAAEF19B0EA6200E667D4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D29FAAF619B0EA6200E667D4;
+			remoteInfo = CRModal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D29FAAF719B0EA6200E667D4 /* CRModal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRModal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29FAAFA19B0EA6200E667D4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D29FAAFC19B0EA6200E667D4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D29FAAFE19B0EA6200E667D4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D29FAB0219B0EA6200E667D4 /* CRModal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRModal-Info.plist"; sourceTree = "<group>"; };
+		D29FAB0419B0EA6200E667D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D29FAB0619B0EA6200E667D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D29FAB0819B0EA6200E667D4 /* CRModal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CRModal-Prefix.pch"; sourceTree = "<group>"; };
+		D29FAB0919B0EA6200E667D4 /* CRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRAppDelegate.h; sourceTree = "<group>"; };
+		D29FAB0A19B0EA6200E667D4 /* CRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRAppDelegate.m; sourceTree = "<group>"; };
+		D29FAB0D19B0EA6200E667D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D29FAB0F19B0EA6200E667D4 /* CRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRViewController.h; sourceTree = "<group>"; };
+		D29FAB1019B0EA6200E667D4 /* CRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRViewController.m; sourceTree = "<group>"; };
+		D29FAB1219B0EA6200E667D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D29FAB1819B0EA6200E667D4 /* CRModalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CRModalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D29FAB1919B0EA6200E667D4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D29FAB2119B0EA6200E667D4 /* CRModalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRModalTests-Info.plist"; sourceTree = "<group>"; };
+		D29FAB2319B0EA6200E667D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D29FAB2519B0EA6200E667D4 /* CRModalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRModalTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D29FAAF419B0EA6200E667D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29FAAFD19B0EA6200E667D4 /* CoreGraphics.framework in Frameworks */,
+				D29FAAFF19B0EA6200E667D4 /* UIKit.framework in Frameworks */,
+				D29FAAFB19B0EA6200E667D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29FAB1519B0EA6200E667D4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29FAB1A19B0EA6200E667D4 /* XCTest.framework in Frameworks */,
+				D29FAB1C19B0EA6200E667D4 /* UIKit.framework in Frameworks */,
+				D29FAB1B19B0EA6200E667D4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D29FAAEE19B0EA6200E667D4 = {
+			isa = PBXGroup;
+			children = (
+				D29FAB0019B0EA6200E667D4 /* CRModal */,
+				D29FAB1F19B0EA6200E667D4 /* CRModalTests */,
+				D29FAAF919B0EA6200E667D4 /* Frameworks */,
+				D29FAAF819B0EA6200E667D4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D29FAAF819B0EA6200E667D4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAAF719B0EA6200E667D4 /* CRModal.app */,
+				D29FAB1819B0EA6200E667D4 /* CRModalTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D29FAAF919B0EA6200E667D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAAFA19B0EA6200E667D4 /* Foundation.framework */,
+				D29FAAFC19B0EA6200E667D4 /* CoreGraphics.framework */,
+				D29FAAFE19B0EA6200E667D4 /* UIKit.framework */,
+				D29FAB1919B0EA6200E667D4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D29FAB0019B0EA6200E667D4 /* CRModal */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAB0919B0EA6200E667D4 /* CRAppDelegate.h */,
+				D29FAB0A19B0EA6200E667D4 /* CRAppDelegate.m */,
+				D29FAB0C19B0EA6200E667D4 /* Main.storyboard */,
+				D29FAB0F19B0EA6200E667D4 /* CRViewController.h */,
+				D29FAB1019B0EA6200E667D4 /* CRViewController.m */,
+				D29FAB1219B0EA6200E667D4 /* Images.xcassets */,
+				D29FAB0119B0EA6200E667D4 /* Supporting Files */,
+			);
+			path = CRModal;
+			sourceTree = "<group>";
+		};
+		D29FAB0119B0EA6200E667D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAB0219B0EA6200E667D4 /* CRModal-Info.plist */,
+				D29FAB0319B0EA6200E667D4 /* InfoPlist.strings */,
+				D29FAB0619B0EA6200E667D4 /* main.m */,
+				D29FAB0819B0EA6200E667D4 /* CRModal-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D29FAB1F19B0EA6200E667D4 /* CRModalTests */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAB2519B0EA6200E667D4 /* CRModalTests.m */,
+				D29FAB2019B0EA6200E667D4 /* Supporting Files */,
+			);
+			path = CRModalTests;
+			sourceTree = "<group>";
+		};
+		D29FAB2019B0EA6200E667D4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAB2119B0EA6200E667D4 /* CRModalTests-Info.plist */,
+				D29FAB2219B0EA6200E667D4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D29FAAF619B0EA6200E667D4 /* CRModal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29FAB2919B0EA6200E667D4 /* Build configuration list for PBXNativeTarget "CRModal" */;
+			buildPhases = (
+				D29FAAF319B0EA6200E667D4 /* Sources */,
+				D29FAAF419B0EA6200E667D4 /* Frameworks */,
+				D29FAAF519B0EA6200E667D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CRModal;
+			productName = CRModal;
+			productReference = D29FAAF719B0EA6200E667D4 /* CRModal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D29FAB1719B0EA6200E667D4 /* CRModalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D29FAB2C19B0EA6200E667D4 /* Build configuration list for PBXNativeTarget "CRModalTests" */;
+			buildPhases = (
+				D29FAB1419B0EA6200E667D4 /* Sources */,
+				D29FAB1519B0EA6200E667D4 /* Frameworks */,
+				D29FAB1619B0EA6200E667D4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D29FAB1E19B0EA6200E667D4 /* PBXTargetDependency */,
+			);
+			name = CRModalTests;
+			productName = CRModalTests;
+			productReference = D29FAB1819B0EA6200E667D4 /* CRModalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D29FAAEF19B0EA6200E667D4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CR;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Shang Chuanren";
+				TargetAttributes = {
+					D29FAB1719B0EA6200E667D4 = {
+						TestTargetID = D29FAAF619B0EA6200E667D4;
+					};
+				};
+			};
+			buildConfigurationList = D29FAAF219B0EA6200E667D4 /* Build configuration list for PBXProject "CRModal" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D29FAAEE19B0EA6200E667D4;
+			productRefGroup = D29FAAF819B0EA6200E667D4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D29FAAF619B0EA6200E667D4 /* CRModal */,
+				D29FAB1719B0EA6200E667D4 /* CRModalTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D29FAAF519B0EA6200E667D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29FAB1319B0EA6200E667D4 /* Images.xcassets in Resources */,
+				D29FAB0519B0EA6200E667D4 /* InfoPlist.strings in Resources */,
+				D29FAB0E19B0EA6200E667D4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29FAB1619B0EA6200E667D4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29FAB2419B0EA6200E667D4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D29FAAF319B0EA6200E667D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29FAB0719B0EA6200E667D4 /* main.m in Sources */,
+				D29FAB0B19B0EA6200E667D4 /* CRAppDelegate.m in Sources */,
+				D29FAB1119B0EA6200E667D4 /* CRViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D29FAB1419B0EA6200E667D4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D29FAB2619B0EA6200E667D4 /* CRModalTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D29FAB1E19B0EA6200E667D4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D29FAAF619B0EA6200E667D4 /* CRModal */;
+			targetProxy = D29FAB1D19B0EA6200E667D4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D29FAB0319B0EA6200E667D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D29FAB0419B0EA6200E667D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D29FAB0C19B0EA6200E667D4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D29FAB0D19B0EA6200E667D4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D29FAB2219B0EA6200E667D4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D29FAB2319B0EA6200E667D4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D29FAB2719B0EA6200E667D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D29FAB2819B0EA6200E667D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D29FAB2A19B0EA6200E667D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CRModal/CRModal-Prefix.pch";
+				INFOPLIST_FILE = "CRModal/CRModal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D29FAB2B19B0EA6200E667D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CRModal/CRModal-Prefix.pch";
+				INFOPLIST_FILE = "CRModal/CRModal-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D29FAB2D19B0EA6200E667D4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CRModal.app/CRModal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CRModal/CRModal-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "CRModalTests/CRModalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D29FAB2E19B0EA6200E667D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CRModal.app/CRModal";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CRModal/CRModal-Prefix.pch";
+				INFOPLIST_FILE = "CRModalTests/CRModalTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D29FAAF219B0EA6200E667D4 /* Build configuration list for PBXProject "CRModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29FAB2719B0EA6200E667D4 /* Debug */,
+				D29FAB2819B0EA6200E667D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D29FAB2919B0EA6200E667D4 /* Build configuration list for PBXNativeTarget "CRModal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29FAB2A19B0EA6200E667D4 /* Debug */,
+				D29FAB2B19B0EA6200E667D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D29FAB2C19B0EA6200E667D4 /* Build configuration list for PBXNativeTarget "CRModalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D29FAB2D19B0EA6200E667D4 /* Debug */,
+				D29FAB2E19B0EA6200E667D4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D29FAAEF19B0EA6200E667D4 /* Project object */;
+}
