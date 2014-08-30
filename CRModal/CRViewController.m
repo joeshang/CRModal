@@ -7,8 +7,11 @@
 //
 
 #import "CRViewController.h"
+#import "CRModal.h"
 
 @interface CRViewController ()
+
+@property (strong, nonatomic) CRModal *modal;
 
 @end
 
@@ -17,13 +20,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)onShowModalClicked:(id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UIView *modalView = [[[NSBundle mainBundle] loadNibNamed:@"CRModalView" owner:self options:nil] firstObject];
+    
+    self.modal = [[CRModal alloc] init];
+    self.modal.blur = self.blurSwitch.on;
+    self.modal.cover = self.coverSwitch.on;
+    [self.modal showModalView:modalView];
+}
+
+- (IBAction)onCloseClicked:(id)sender
+{
+    [self.modal dismiss];
+    self.modal = nil;
 }
 
 @end

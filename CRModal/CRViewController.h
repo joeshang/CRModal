@@ -10,4 +10,10 @@
 
 @interface CRViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UISwitch *blurSwitch;
+@property (weak, nonatomic) IBOutlet UISwitch *coverSwitch;
+
+- (IBAction)onShowModalClicked:(id)sender;
+- (IBAction)onCloseClicked:(id)sender;
+
 @end

@@ -21,6 +21,11 @@
 		D29FAB1C19B0EA6200E667D4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAAFE19B0EA6200E667D4 /* UIKit.framework */; };
 		D29FAB2419B0EA6200E667D4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D29FAB2219B0EA6200E667D4 /* InfoPlist.strings */; };
 		D29FAB2619B0EA6200E667D4 /* CRModalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB2519B0EA6200E667D4 /* CRModalTests.m */; };
+		D29FAB3419B20EC900E667D4 /* CRModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D29FAB3319B20EC900E667D4 /* CRModalView.xib */; };
+		D29FAB3D19B21B9000E667D4 /* CRModal.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB3C19B21B9000E667D4 /* CRModal.m */; };
+		D29FAB4019B21B9F00E667D4 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = D29FAB3F19B21B9F00E667D4 /* UIImage+Blur.m */; };
+		D29FAB4219B21C4600E667D4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAB4119B21C4600E667D4 /* Accelerate.framework */; };
+		D29FAB4419B21C6200E667D4 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D29FAB4319B21C6200E667D4 /* CoreImage.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +58,13 @@
 		D29FAB2119B0EA6200E667D4 /* CRModalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CRModalTests-Info.plist"; sourceTree = "<group>"; };
 		D29FAB2319B0EA6200E667D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D29FAB2519B0EA6200E667D4 /* CRModalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CRModalTests.m; sourceTree = "<group>"; };
+		D29FAB3319B20EC900E667D4 /* CRModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CRModalView.xib; sourceTree = "<group>"; };
+		D29FAB3B19B21B9000E667D4 /* CRModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CRModal.h; path = CRModal/CRModal.h; sourceTree = "<group>"; };
+		D29FAB3C19B21B9000E667D4 /* CRModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CRModal.m; path = CRModal/CRModal.m; sourceTree = "<group>"; };
+		D29FAB3E19B21B9F00E667D4 /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Blur.h"; path = "CRModal/UIImage+Blur.h"; sourceTree = "<group>"; };
+		D29FAB3F19B21B9F00E667D4 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Blur.m"; path = "CRModal/UIImage+Blur.m"; sourceTree = "<group>"; };
+		D29FAB4119B21C4600E667D4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D29FAB4319B21C6200E667D4 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D29FAB4419B21C6200E667D4 /* CoreImage.framework in Frameworks */,
+				D29FAB4219B21C4600E667D4 /* Accelerate.framework in Frameworks */,
 				D29FAAFD19B0EA6200E667D4 /* CoreGraphics.framework in Frameworks */,
 				D29FAAFF19B0EA6200E667D4 /* UIKit.framework in Frameworks */,
 				D29FAAFB19B0EA6200E667D4 /* Foundation.framework in Frameworks */,
@@ -101,6 +115,8 @@
 		D29FAAF919B0EA6200E667D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D29FAB4319B21C6200E667D4 /* CoreImage.framework */,
+				D29FAB4119B21C4600E667D4 /* Accelerate.framework */,
 				D29FAAFA19B0EA6200E667D4 /* Foundation.framework */,
 				D29FAAFC19B0EA6200E667D4 /* CoreGraphics.framework */,
 				D29FAAFE19B0EA6200E667D4 /* UIKit.framework */,
@@ -115,8 +131,10 @@
 				D29FAB0919B0EA6200E667D4 /* CRAppDelegate.h */,
 				D29FAB0A19B0EA6200E667D4 /* CRAppDelegate.m */,
 				D29FAB0C19B0EA6200E667D4 /* Main.storyboard */,
+				D29FAB3319B20EC900E667D4 /* CRModalView.xib */,
 				D29FAB0F19B0EA6200E667D4 /* CRViewController.h */,
 				D29FAB1019B0EA6200E667D4 /* CRViewController.m */,
+				D29FAB3219B1732F00E667D4 /* CRModal */,
 				D29FAB1219B0EA6200E667D4 /* Images.xcassets */,
 				D29FAB0119B0EA6200E667D4 /* Supporting Files */,
 			);
@@ -150,6 +168,17 @@
 				D29FAB2219B0EA6200E667D4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D29FAB3219B1732F00E667D4 /* CRModal */ = {
+			isa = PBXGroup;
+			children = (
+				D29FAB3B19B21B9000E667D4 /* CRModal.h */,
+				D29FAB3C19B21B9000E667D4 /* CRModal.m */,
+				D29FAB3E19B21B9F00E667D4 /* UIImage+Blur.h */,
+				D29FAB3F19B21B9F00E667D4 /* UIImage+Blur.m */,
+			);
+			name = CRModal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D29FAB1319B0EA6200E667D4 /* Images.xcassets in Resources */,
+				D29FAB3419B20EC900E667D4 /* CRModalView.xib in Resources */,
 				D29FAB0519B0EA6200E667D4 /* InfoPlist.strings in Resources */,
 				D29FAB0E19B0EA6200E667D4 /* Main.storyboard in Resources */,
 			);
@@ -252,6 +282,8 @@
 			files = (
 				D29FAB0719B0EA6200E667D4 /* main.m in Sources */,
 				D29FAB0B19B0EA6200E667D4 /* CRAppDelegate.m in Sources */,
+				D29FAB4019B21B9F00E667D4 /* UIImage+Blur.m in Sources */,
+				D29FAB3D19B21B9000E667D4 /* CRModal.m in Sources */,
 				D29FAB1119B0EA6200E667D4 /* CRViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
