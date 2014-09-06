@@ -8,15 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, CRModalCoverOptions)
+{
+    CRModalOptionCoverDark,
+    CRModalOptionCoverBlur,
+    CRModalOptionCoverDarkBlur
+};
+
 @interface CRModal : UIViewController <UIGestureRecognizerDelegate>
 
-@property (nonatomic, assign) BOOL tapOutsideToDismiss;
-@property (nonatomic, assign) BOOL blur;
-@property (nonatomic, assign) BOOL cover;
++ (void)showModalView:(UIView *)modalView
+          coverOption:(CRModalCoverOptions)coverOption
+  tapOutsideToDismiss:(BOOL)tapOutsideToDismiss
+             animated:(BOOL)animated
+           completion:(void(^)())completion;
 
-- (void)showModalView:(UIView *)modalView;
-- (void)showModalView:(UIView *)modalView animated:(BOOL)animated;
-- (void)dismiss;
-- (void)dismissWithCompletion:(void(^)())completion;
++ (void)showModalView:(UIView *)modalView;
+
++ (void)dismiss;
 
 @end

@@ -26,16 +26,32 @@
 {
     UIView *modalView = [[[NSBundle mainBundle] loadNibNamed:@"CRModalView" owner:self options:nil] firstObject];
     
-    self.modal = [[CRModal alloc] init];
-    self.modal.blur = self.blurSwitch.on;
-    self.modal.cover = self.coverSwitch.on;
-    [self.modal showModalView:modalView];
+    CRModalCoverOptions option;
+    if (self.blurSwitch.on && self.coverSwitch.on)
+    {
+        option = CRModalOptionCoverDarkBlur;
+    }
+    else if (self.blurSwitch.on)
+    {
+        option = CRModalOptionCoverBlur;
+    }
+    else
+    {
+        option = CRModalOptionCoverDark;
+    }
+    
+    [CRModal showModalView:modalView
+               coverOption:option
+       tapOutsideToDismiss:YES
+                  animated:YES
+                completion:^{
+                    NSLog(@"modal dismiss");
+                }];
 }
 
 - (IBAction)onCloseClicked:(id)sender
 {
-    [self.modal dismiss];
-    self.modal = nil;
+    [CRModal dismiss];
 }
 
 @end

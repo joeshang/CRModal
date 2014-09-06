@@ -16,9 +16,12 @@
 
 @interface CRModal ()
 
+@property (nonatomic, strong) void(^completion)();
+
 @property (nonatomic, strong) UIView *popupView;
 @property (nonatomic, strong) UIView *coverView;
 @property (nonatomic, strong) UIImageView *blurView;
+@property (nonatomic, strong) UIViewController *originRootViewController;
 
 @property (nonatomic, assign) CGAffineTransform popupOriginTransform;
 
@@ -28,14 +31,13 @@
 
 #pragma mark - init
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super init];
+    
     if (self)
     {
-        _tapOutsideToDismiss = YES;
-        _cover = YES;
-        _blur = NO;
+        
     }
     
     return self;
@@ -43,43 +45,92 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
-    self.view.frame = [[UIScreen mainScreen] bounds];
+    self.view.backgroundColor = [UIColor blackColor];
 }
 
 #pragma mark - show & dismiss
 
-- (void)showModalView:(UIView *)modalView animated:(BOOL)animated
++ (void)showModalView:(UIView *)modalView
+          coverOption:(CRModalCoverOptions)coverOption
+  tapOutsideToDismiss:(BOOL)tapOutsideToDismiss
+             animated:(BOOL)animated
+           completion:(void(^)())completion
 {
-    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    
-    [rootViewController.view addSubview:self.view];
-    self.view.alpha = kCRModalAlphaDismiss;
-    
-    if (self.tapOutsideToDismiss)
+    CRModal *modal = [[CRModal alloc] init];
+    [modal showModalView:modalView
+             coverOption:coverOption
+     tapOutsideToDismiss:tapOutsideToDismiss
+                animated:animated
+              completion:completion];
+}
+
++ (void)showModalView:(UIView *)modalView
+{
+    [self showModalView:modalView
+            coverOption:CRModalOptionCoverDark
+    tapOutsideToDismiss:YES
+               animated:YES
+             completion:nil];
+}
+
++ (void)dismiss
+{
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    if ([window.rootViewController isKindOfClass:[CRModal class]])
     {
-        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                               action:@selector(onTapOutside:)];
-        tapGestureRecognizer.delegate = self;
-        [self.view addGestureRecognizer:tapGestureRecognizer];
+        CRModal *modal = (CRModal *)window.rootViewController;
+        [modal dismiss];
+        modal = nil;
     }
+}
+
+- (void)showModalView:(UIView *)modalView
+          coverOption:(CRModalCoverOptions)coverOption
+  tapOutsideToDismiss:(BOOL)tapOutsideToDismiss
+             animated:(BOOL)animated
+           completion:(void(^)())completion
+{
+    self.completion = completion;
     
-    if (self.blur)
+    UIWindow *window = [[UIApplication sharedApplication] keyWindow];
+    self.originRootViewController = window.rootViewController;
+    self.view.transform = self.originRootViewController.view.transform;
+    self.originRootViewController.view.transform = CGAffineTransformIdentity;
+    CGRect frame = self.originRootViewController.view.frame;
+    frame.origin = CGPointZero;
+    self.originRootViewController.view.frame = frame;
+    [self.view addSubview:self.originRootViewController.view];
+    window.rootViewController = self;
+    
+    if (coverOption == CRModalOptionCoverBlur || coverOption == CRModalOptionCoverDarkBlur)
     {
-        UIImage *image = [self screenShotForView:rootViewController.view];
+        UIImage *image = [self screenShotForView:self.originRootViewController.view];
         image = [image boxblurImageWithBlur:kCRModalBlurValue];
         self.blurView = [[UIImageView alloc] initWithImage:image];
+        self.blurView.alpha = kCRModalAlphaDismiss;
         self.blurView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.view addSubview:self.blurView];
     }
     
-    if (self.cover)
+    self.coverView = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.coverView.alpha = kCRModalAlphaDismiss;
+    self.coverView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    if (coverOption == CRModalOptionCoverBlur)
     {
-        self.coverView = [[UIView alloc] initWithFrame:self.view.bounds];
-        self.coverView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.coverView.backgroundColor = [UIColor clearColor];
+    }
+    else
+    {
         self.coverView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.5];
-        [self.view addSubview:self.coverView];
+    }
+    [self.view addSubview:self.coverView];
+    
+    if (tapOutsideToDismiss)
+    {
+        UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                               action:@selector(onTapOutside:)];
+        tapGestureRecognizer.delegate = self;
+        [self.coverView addGestureRecognizer:tapGestureRecognizer];
     }
     
     self.popupView = [[UIView alloc] initWithFrame:modalView.bounds];
@@ -89,10 +140,14 @@
                                     | UIViewAutoresizingFlexibleRightMargin;
     self.popupView.center = CGPointMake(self.view.bounds.size.width / 2, self.view.bounds.size.height / 2);
     [self.popupView addSubview:modalView];
-    [self.view addSubview:self.popupView];
+    [self.coverView addSubview:self.popupView];
     
     [UIView animateWithDuration:kCRModalAnimationDuration animations:^{
-        self.view.alpha = kCRModalAlphaShow;
+        self.coverView.alpha = kCRModalAlphaShow;
+        if (self.blurView)
+        {
+            self.blurView.alpha = kCRModalAlphaShow;
+        }
     }];
     
     if (animated)
@@ -109,35 +164,48 @@
     }
 }
 
-- (void)showModalView:(UIView *)modalView
-{
-    [self showModalView:modalView animated:YES];
-}
-
-- (void)dismissWithCompletion:(void(^)())completion
+- (void)dismiss
 {
     [UIView animateWithDuration:kCRModalAnimationDuration
                      animations:^{
-                         self.view.alpha = kCRModalAlphaDismiss;
+                         self.coverView.alpha = kCRModalAlphaDismiss;
+                         if (self.blurView)
+                         {
+                             self.blurView.alpha = kCRModalAlphaDismiss;
+                         }
                          self.popupView.transform = self.popupOriginTransform;
                      }
                      completion:^(BOOL finished){
-                         [self.view removeFromSuperview];
-                         if (completion)
+                         UIWindow *window =[[UIApplication sharedApplication] keyWindow];
+                         [self.originRootViewController.view removeFromSuperview];
+                         self.originRootViewController.view.transform = window.rootViewController.view.transform;
+                         window.rootViewController = self.originRootViewController;
+                         
+                         if (self.completion)
                          {
-                             completion();
+                             self.completion();
                          }
                      }];
 }
 
-- (void)dismiss
-{
-    [self dismissWithCompletion:nil];
-}
+#pragma mark - action
 
 - (void)onTapOutside:(id)sender
 {
-    [self dismissWithCompletion:nil];
+    [self dismiss];
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation duration:(NSTimeInterval)duration
+{
+    self.originRootViewController.view.transform = CGAffineTransformIdentity;
+    self.originRootViewController.view.bounds = self.view.bounds;
+    if(self.blurView != nil)
+    {
+        self.blurView.hidden = YES;
+        UIImage *image = [self screenShotForView:self.originRootViewController.view];
+        self.blurView.hidden = NO;
+        self.blurView.image = [image boxblurImageWithBlur:kCRModalBlurValue];
+    }
 }
 
 - (UIImage *)screenShotForView:(UIView *)view
