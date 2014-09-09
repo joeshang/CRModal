@@ -13,6 +13,7 @@
 #define kCRModalAlphaDismiss            0.0
 #define kCRModalAnimationDuration       0.3
 #define kCRModalBlurValue               0.3
+#define kCRModalDarkAlphaValue          0.7
 
 @interface CRModal ()
 
@@ -121,7 +122,11 @@
     }
     else
     {
-        self.coverView.backgroundColor = [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:0.5];
+        self.coverView.backgroundColor = [UIColor colorWithRed:0/255.0
+                                                         green:0/255.0
+                                                          blue:0/255.0
+                                                         alpha:kCRModalDarkAlphaValue];
+
     }
     [self.view addSubview:self.coverView];
     
@@ -219,6 +224,18 @@
     image = [UIImage imageWithData:imageData];
     
     return image;
+}
+
+#pragma mark - gesture recognizer delegate
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if (touch.view == self.coverView)
+    {
+        return YES;
+    }
+    
+    return NO;
 }
 
 @end
